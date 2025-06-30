@@ -23,8 +23,7 @@ function Board({xIsNext,squares,onPlay}) {
       nextSquares[i] = 'O';
     }
     onPlay(nextSquares);
-    setSquares(nextSquares);
-    setXIsNext(!xIsNext);
+  }
     const winner = caluculateWinner(nextSquares);
     let status;
     if (winner) {
@@ -32,7 +31,6 @@ function Board({xIsNext,squares,onPlay}) {
     } else {
       status = "Next player: " + (xIsNext ? 'X' : 'O');
     }
-  }
 
   return (
     <>
